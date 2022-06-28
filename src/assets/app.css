@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
+@font-face {
+    font-family: BaseFont;
+    src: url(/fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: BoldFont;
+    src: url(/fonts/Gilroy-ExtraBold.otf);
+}
+
+body {
+    font-family: Quicksand;
+}
