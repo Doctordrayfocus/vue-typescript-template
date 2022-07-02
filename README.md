@@ -2,7 +2,7 @@
 
 This project extends the default typescript template of VueCli. The goal is to provide a quick and easy-to-use vuejs template that contains common plugins and folder structure required to build a single-page app of any size or requirement.
 
-I wanted to create a template that could be easily replicated, allowing me to spend less time on setup and more time on the application's business logic.
+I wanted to create a template that could be easily replicated, allowing us to spend less time on project setup and more time on the application's business logic.
 
 
 ## Features
