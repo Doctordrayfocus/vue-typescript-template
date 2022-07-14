@@ -1,11 +1,11 @@
 import AppLayout from "./layouts/AppLayout.vue";
-import { createApp } from "vue/dist/vue.esm-bundler";
+import { createApp } from "vue/dist/vue.esm-bundler.js";
 import App from "./App.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import routes from "./router/routes";
+import {routes} from "./router/routes";
 import { createMetaManager } from "vue-meta";
 
-// You can disable this if you dont need tailwindCss
+// You can disable this if you dont want TailwindCss
 import "./assets/app.css";
 
 import { store, key } from "./store";

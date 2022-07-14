@@ -1,7 +1,7 @@
-const importAll = (r: __WebpackModuleApi.RequireContext) =>
-  r.keys().map((key: string) => key.slice(2).replace(".vue", "").split("/"));
+const importAll = (r: any) =>
+  Object.keys(r).map((key: string) => key.slice(2).replace(".vue", "").split("/"));
 
-const pages = importAll(require.context("../views", true, /\.vue$/));
+const pages = importAll(import.meta.glob("../views/*/**"));
 
 const generateRoute = (path: any[]) => {
   // Note: remove first element if route starts with index
@@ -36,8 +36,12 @@ const childrenByPath = pages
   // Note: filter pages by children routes
   .filter((path: any[]) => path.some(childrenFilter))
   .map((path: any) => {
+	
+	const pathForRoute = [...path];
+	  pathForRoute.splice(0, 2)
+
     // Note: copy path and remove special char ^
-    const copy = [...path];
+    const copy = [...pathForRoute];
     copy[copy.length - 1] = copy[copy.length - 1].slice(1);
     // Note: generate key to identify parent
     const key = `/${generateRoute(copy.slice(0, copy.length - 1))}`;
@@ -59,15 +63,21 @@ const childrenByPath = pages
     return acc;
   }, {});
 
+
 const defaultLayout = "AppDefaultLayout";
 
-export default pages
+export const routes = pages
   // Note: remove nested routes from pages
   .filter((path: any[]) => !path.some(childrenFilter))
   .map(async (path: any[]) => {
-    const { default: component } = await import(`../views/${path.join("/")}`);
+	const pathForFile = [...path];
+    const { default: component } = await import(`..${pathForFile.join("/")}.vue`);
     const { layout, middlewares, name } = component;
-    const route = `/${generateRoute([...path])}`;
+	 
+	  const pathForRoute = [...path];
+	  pathForRoute.splice(0, 2)
+	 
+    const route = `/${generateRoute([...pathForRoute])}`;
     let children: {
       path: any;
       name: any;
@@ -75,15 +85,19 @@ export default pages
       meta: { layout: any; middlewares: any };
     }[] = [];
     if (childrenByPath[route]) {
+		
+
       const promises = childrenByPath[route].map(async ({ path, route }) => {
         const { default: childComponent } = await import(
-          `../views/${path.join("/")}`
+          `..${path.join("/")}.vue`
         );
+
         const {
           layout: childLayout,
           middlewares: childMiddleware,
           name: childName,
         } = childComponent;
+
         return {
           path: route,
           name: childName,
@@ -95,6 +109,7 @@ export default pages
         };
       });
       children = await Promise.all(promises);
+	  
     }
     return {
       path: route,

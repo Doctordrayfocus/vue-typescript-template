@@ -14,12 +14,15 @@ export default {
   setup() {
     const layout = shallowRef(AppLayoutDefault);
     const route = useRoute();
+
     watch(
       () => route.meta,
       async (meta) => {
         try {
-          const component = await import(`./${meta.layout}.vue`);
-          layout.value = component?.default || AppLayoutDefault;
+          if (meta.layout) {
+            const component = await import(`./${meta.layout}.vue`);
+            layout.value = component?.default || AppLayoutDefault;
+          }
         } catch (e) {
           layout.value = AppLayoutDefault;
         }

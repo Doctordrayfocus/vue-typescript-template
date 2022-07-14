@@ -1,1 +1,1 @@
-declare module 'vue/dist/vue.esm-bundler'
+declare module 'vue/dist/vue.esm-bundler.js';

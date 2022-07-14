@@ -1,45 +1,32 @@
 {
   "name": "vue-typescript-template",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@originjs/vite-plugin-require-context": "^1.0.9",
     "axios": "^0.27.2",
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0",
+    "sass": "^1.53.0",
+    "vite-plugin-dynamic-import": "^0.1.1",
+    "vue": "^3.2.37",
     "vue-class-component": "^8.0.0-0",
+    "vue-meta": "^3.0.0-alpha.7",
     "vue-router": "^4.0.0-0",
+    "vue3-runtime-template": "^1.0.1",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.19",
-    "@types/vue": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-eslint": "~4.5.15",
-    "@vue/cli-plugin-router": "~4.5.15",
-    "@vue/cli-plugin-typescript": "~4.5.15",
-    "@vue/cli-plugin-unit-jest": "~4.5.15",
-    "@vue/cli-plugin-vuex": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1",
-    "sass": "^1.53.0",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5",
-    "vue-jest": "^5.0.0-0",
-    "vue-meta": "^3.0.0-alpha.7"
+    "@vitejs/plugin-vue": "^3.0.0",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.38.4"
   }
 }
