@@ -5,7 +5,7 @@
     }}</template>
   </metainfo>
   <AppLayout>
-    <router-view> </router-view>
+    <router-view />
   </AppLayout>
 </template>
 <script lang="ts">

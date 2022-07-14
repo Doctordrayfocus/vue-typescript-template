@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="w-full py-5 flex flex-col space-y-3 justify-center items-center bg-blue-100 mt-6"
-  >
-    <h1>This is the sample index page</h1>
-    <router-view></router-view>
+  <div class="w-full bg-green-100 py-3 text-center">
+    <h4>This is the sample child page</h4>
   </div>
 </template>
 
@@ -12,11 +9,11 @@ import { defineComponent } from "vue";
 import { useMeta } from "vue-meta";
 
 export default defineComponent({
-  name: "SampleIndexPage",
+  name: "ChildIndexPage",
   layout: "Sample",
   setup() {
     useMeta({
-      title: "Sample Index Page",
+      title: "Sample Child Page",
     });
     return {};
   },
