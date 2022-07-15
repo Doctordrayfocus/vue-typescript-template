@@ -1,5 +1,5 @@
 import { SampleModel } from "./../modules/sample";
-import { $api } from "@/services/api";
+import { $api } from "../services/api";
 import { ref } from "vue";
 
 const sampleApiData = ref<SampleModel>();

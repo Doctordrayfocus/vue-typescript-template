@@ -1,8 +1,8 @@
+@import url(//fonts.googleapis.com/css?family=Quicksand);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url(//fonts.googleapis.com/css?family=Quicksand);
 
 @font-face {
     font-family: BaseFont;
