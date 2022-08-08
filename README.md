@@ -28,9 +28,9 @@ Install app modules
 ```
 npm install
 ```
-Start VueCli server
+Start Vite server
 ```
-npm run serve
+npm run dev
 ```
 
 ## Project Folders
