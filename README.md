@@ -1,5 +1,6 @@
 # vue-typescript-template
 
+
 This project extends VueCLI default typescript template. The goal is to provide a quick and simple vuejs template that includes the common plugins and folder structure needed to build a single-page app of any size or requirement. This allows you to spend less time on project setup and more time on the business logic of the application.
 
 
@@ -28,6 +29,7 @@ Install app modules
 ```
 npm install
 ```
+
 Start VueCLI server
 ```
 npm run serve
