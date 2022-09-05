@@ -12,9 +12,7 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 export default defineComponent({
   name: "HomePage",
   layout: "Sample",
-  components: {
-    HelloWorld,
-  },
+  components: {},
   setup() {
     useMeta({
       title: "Home Page",

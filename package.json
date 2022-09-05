@@ -1,32 +1,52 @@
 {
-  "name": "vue-typescript-template",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@originjs/vite-plugin-require-context": "^1.0.9",
-    "axios": "^0.27.2",
-    "sass": "^1.53.0",
-    "vite-plugin-dynamic-import": "^0.1.1",
-    "vue": "^3.2.37",
-    "vue-class-component": "^8.0.0-0",
-    "vue-meta": "^3.0.0-alpha.7",
-    "vue-router": "^4.0.0-0",
-    "vue3-runtime-template": "^1.0.1",
-    "vuex": "^4.0.0-0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.0",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0",
-    "vue-tsc": "^0.38.4"
-  }
+	"name": "vue-typescript-template",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"test:unit": "vue-cli-service test:unit",
+		"test:e2e": "vue-cli-service test:e2e",
+		"lint": "vue-cli-service lint"
+	},
+	"dependencies": {
+		"@tailwindcss/line-clamp": "^0.3.0",
+		"@tailwindcss/typography": "^0.5.0",
+		"axios": "^0.27.2",
+		"lodash": "^4.17.21",
+		"moment": "^2.29.1",
+		"vue": "^3.2.21",
+		"vue-meta": "^3.0.0-alpha.7",
+		"vue-router": "^4.0.12",
+		"vuex": "^4.0.2"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss7-compat": "^2.2.17",
+		"@types/jest": "^27.0.2",
+		"@types/lodash": "^4.14.178",
+		"@typescript-eslint/eslint-plugin": "^5.6.0",
+		"@typescript-eslint/parser": "^5.6.0",
+		"@vue/cli-plugin-babel": "~5.0.0-rc.1",
+		"@vue/cli-plugin-e2e-cypress": "~5.0.0-rc.1",
+		"@vue/cli-plugin-eslint": "~5.0.0-rc.1",
+		"@vue/cli-plugin-router": "~5.0.0-rc.1",
+		"@vue/cli-plugin-typescript": "~5.0.0-rc.1",
+		"@vue/cli-plugin-unit-jest": "~5.0.0-rc.1",
+		"@vue/cli-service": "~5.0.0-rc.1",
+		"@vue/eslint-config-typescript": "^9.1.0",
+		"@vue/test-utils": "^2.0.0-rc.16",
+		"@vue/vue3-jest": "^27.0.0-alpha.3",
+		"autoprefixer": "^10.4.2",
+		"babel-jest": "^27.3.1",
+		"cypress": "^8.7.0",
+		"eslint": "^8.4.1",
+		"eslint-plugin-vue": "^8.2.0",
+		"jest": "^27.3.1",
+		"postcss": "^8.4.5",
+		"sass-loader": "^13.0.2",
+		"tailwindcss": "^3.0.17",
+		"ts-jest": "^27.0.7",
+		"typescript": "^4.3.5"
+	},
+	"description": "Vue Typescript Template"
 }
