@@ -1,49 +1,47 @@
-import { ReadOnlyApiService } from "./ReadOnlyService";
-import { AxiosResponse } from "axios";
+import { ReadOnlyApiService } from './ReadOnlyService'
+import { AxiosResponse } from 'axios'
 
 export class ModelApiService extends ReadOnlyApiService {
   constructor(resource: string) {
-    super(resource);
+    super(resource)
   }
 
-  public async post(data = {}): Promise<AxiosResponse<any, any>> {
+  public async post(data = {}): Promise<AxiosResponse<any>> {
     try {
-      const response = await this.axiosInstance.post(this.getUrl(), data);
+      const response = await this.axiosInstance.post(this.getUrl(), data)
 
-      return response;
+      return response
     } catch (err) {
-      this.handleErrors(err);
-      throw err;
+      this.handleErrors(err)
+      throw err
     }
   }
 
-  public async put(id: string, data = {}): Promise<AxiosResponse<any, any>> {
-    if (!id) throw Error("Id is not provided");
+  public async put(id: string, data = {}): Promise<AxiosResponse<any>> {
+    if (!id) throw Error('Id is not provided')
 
     try {
       const response: AxiosResponse = await this.axiosInstance.put(
         this.getUrl(id),
-        data
-      );
+        data,
+      )
 
-      return response;
+      return response
     } catch (err) {
-      this.handleErrors(err);
-      throw err;
+      this.handleErrors(err)
+      throw err
     }
   }
 
-  public async delete(
-    id: string | undefined
-  ): Promise<AxiosResponse<any, any>> {
-    if (!id) throw Error("Id is not provided");
+  public async delete(id: string | undefined): Promise<AxiosResponse<any>> {
+    if (!id) throw Error('Id is not provided')
     try {
-      const response = await this.axiosInstance.delete(this.getUrl(id));
+      const response = await this.axiosInstance.delete(this.getUrl(id))
 
-      return response;
+      return response
     } catch (err) {
-      this.handleErrors(err);
-      throw err;
+      this.handleErrors(err)
+      throw err
     }
   }
 }
